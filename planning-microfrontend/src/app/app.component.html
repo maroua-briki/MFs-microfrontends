@@ -1,0 +1,19 @@
+<div class="container-fluid page-body-wrapper">
+  <planning-microfrontend-sidebar *ngIf="showSidebar"></planning-microfrontend-sidebar>
+  <div class="main-panel">
+    <div class="content-wrapper">
+      <planning-microfrontend-spinner *ngIf="false"></planning-microfrontend-spinner>
+
+     
+      <!-- <button type="button" class="btn btn-gradient-info btn-rounded btn-fw" routerLink="/planning/projects"
+        routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"> project-list</button>
+
+      <button mat-button color="primary" routerLink="/planning/abc/add" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact:
+         true}">abc</button>
+      <button mat-raised-button color="accent">Accent</button> -->
+      <br>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<!--
+<h3>Create Role</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+<div  style="width: 400px;">
+  <form >
+    <div class="form-group">
+      <label for="roleLabel">Role Label</label>
+      <input type="text" class="form-control" id="roleLabel" required [(ngModel)]="role.roleLabel" name="roleLabel">
+    </div>
+    
+    <button type="submit" class="btn btn-success" name="submit_reg" value="Register" (click)="registerNow()">Submit</button>
+  </form>
+</div>
+</div>
+</div>
+</div>
+-->
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Add new role</h4>
+    <p class="card-description">
+            
+    </p>
+      <form >
+        <div class="form-group">
+          <input  class="form-control form-control-lg" type="text" id="roleLabel" required [(ngModel)]="role.roleLabel" name="roleLabel" placeholder="role Label">
+        </div>
+        
+        <div class="mt-3">
+          <button class="btn btn-gradient-primary mb-2" type="sumbit" value="Register" (click)="registerNow()" >ADD</button>
+          <button class="btn btn-gradient-back mb-2" type="sumbit"  (click)="gotoList()" >BACK</button> 
+        </div>
+        </form>
+        </div>
+    </div>
+

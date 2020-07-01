@@ -1,0 +1,75 @@
+<button type="button" class="btn btn-gradient-info btn-rounded btn-fw" routerLink="/planning/create-project"
+    routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+true}"> New project</button>
+<br>
+<br>
+<div class="col-lg-12 grid-margin stretch-card">
+
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Projects List</h4>
+            <p class="card-description">
+            </p>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                Project id
+                            </th>
+                            <th>
+                                topic </th>
+
+                            <th>
+                                Start Date
+                            </th>
+                            <th>
+                                Deadline
+                            </th>
+                            <th>
+                                Actions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let project of projects | async">
+                            <td class="py-1">
+                                {{project.id}}
+
+                            </td>
+                            <td>
+                                {{ project.topic}}
+                            </td>
+                            <td>
+                                {{project.startDate}}
+                            </td>
+                            <td>
+                                {{project.endDate}}
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-gradient-warning btn-rounded btn-icon"
+                                    (click)="updateProject(project.id)">
+                                    <i class="mdi mdi-border-color"></i>
+                                    <!-- <i class="mdi mdi-lead-pencil"></i> -->
+                                </button>
+
+                                <button type="button" class="btn btn-gradient-dark btn-rounded btn-icon"
+                                    (click)="goToDetails(project.id)">
+                                    <i class="mdi mdi-file-document-box"></i>
+                                </button>
+                                <!-- mdi mdi-step-forward -->
+                                <button type="button" class="btn btn-gradient-danger btn-rounded btn-icon"
+                                    (click)="deleteProject(project.id)">
+                                    <i class="mdi mdi-delete"></i>
+                                </button>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</div>

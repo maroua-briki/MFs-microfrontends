@@ -1,0 +1,65 @@
+<button type="button" class="btn btn-gradient-info btn-rounded btn-fw" routerLink="./add-phase"
+routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"> New Phase</button>
+<br>
+<br>
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+      
+        <div class="card-body">
+            <h4 class="card-title">Phase List</h4>
+            <p class="card-description">
+            </p>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                phase Label </th>
+                            <th>
+                                Start Date
+                            </th>
+                            <th>
+                                Deadline
+                            </th>
+                            <th>
+                                Actions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let phase of phases">
+
+                            <td>
+                                {{ phase.phaseLabel}}
+                            </td>
+                            <td>
+                                {{phase.startDate}}
+                            </td>
+                            <td>
+                                {{phase.endDate}}
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-gradient-warning btn-rounded btn-icon"
+                                    [routerLink]="['./edit-phase', phase.id]" routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{exact:
+                                true}">
+                                    <i class="mdi mdi-border-color"></i>
+                                </button>
+
+                                <button type="button" class="btn btn-gradient-dark btn-rounded btn-icon"
+                                    [routerLink]="['./one', phase.id]" routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{exact:
+                            true}">
+                                    <i class="mdi mdi-file-document-box"></i>
+                                </button>
+                                <button type="button" class="btn btn-gradient-danger btn-rounded btn-icon">
+                                    <i class="mdi mdi-delete"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

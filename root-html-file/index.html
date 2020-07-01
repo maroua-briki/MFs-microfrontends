@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src *  data: blob: 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * data: blob: 'unsafe-inline'; font-src * data: blob: 'unsafe-inline';">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Your application</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="importmap-type" content="systemjs-importmap">
+  <script type="systemjs-importmap">
+      {
+        "imports": {
+          "app1": "http://localhost:4201/main.js",
+          "app2": "http://localhost:4202/main.js",
+          "navbar": "http://localhost:4300/main.js",
+
+          "navbar-mf":"http://localhost:4208/main.js",
+          "sidebar-mf":"http://localhost:4211/main.js",
+
+
+
+          "footer-mf": "http://localhost:4206/main.js",
+          "planning":"http://localhost:4225/main.js",
+          "auth":"http://localhost:4205/main.js",
+          "resource":"http://localhost:4207/main.js",
+
+
+          "home-dashb":"http://localhost:4301/main.js",
+          "single-spa": "https://cdnjs.cloudflare.com/ajax/libs/single-spa/5.5.0/system/single-spa.min.js"
+        }
+      }
+    </script>
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/single-spa/5.5.0/system/single-spa.min.js"
+    as="script" crossorigin="anonymous" />
+
+    <!--  include bootdtrap-->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+
+    <!--  -->
+  <script src='https://unpkg.com/core-js-bundle@3.1.4/minified.js'></script>
+  <script src="https://unpkg.com/zone.js"></script>
+  <script src="https://unpkg.com/import-map-overrides@1.15.1/dist/import-map-overrides.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/4.0.0/system.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/4.0.0/extras/amd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/4.0.0/extras/named-exports.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/4.0.0/extras/named-register.min.js"></script>
+</head>
+
+<body>
+  <script>
+    System.import('single-spa').then(function (singleSpa) {
+      // singleSpa.registerApplication(
+      //   'navbar',
+      //   function () {
+      //     return System.import('navbar');
+      //   },
+      //   function (location) {
+      //     return location.pathname.startsWith('/navbar');
+      //   }
+        // function (location) {
+        //   return false;
+        // }
+      //)
+      
+       
+      singleSpa.registerApplication(
+        'auth',
+        function () {
+          return System.import('auth');
+        },
+        function (location) {
+          return location.pathname.startsWith('/authentification/login');
+        }
+      );
+
+      singleSpa.registerApplication(
+        'resource',
+        function () {
+          return System.import('resource');
+        },
+        function (location) {
+          return location.pathname.startsWith('/ressource');
+        }
+      );
+
+
+      singleSpa.registerApplication(
+        'navbar-mf',
+        function () {
+          return System.import('navbar-mf');
+        },
+        function (location) {
+          return location.pathname.startsWith('/');
+        }
+      );
+
+      singleSpa.registerApplication(
+        'app1',
+        function () {
+          return System.import('app1');
+        },
+        function (location) {
+          return location.pathname.startsWith('/app1');
+        }
+      );
+
+      singleSpa.registerApplication(
+        'app2',
+        function () {
+          return System.import('app2');
+        },
+        function (location) {
+          return location.pathname.startsWith('/app2');
+        }
+      )
+
+      singleSpa.registerApplication(
+        'footer-mf',
+        function () {
+          return System.import('footer-mf');
+        },
+        function (location) {
+          return location.pathname.startsWith('/');
+        }
+      )
+      singleSpa.registerApplication(
+        'planning',
+        function () {
+          return System.import('planning');
+        },
+        function (location) {
+          return location.pathname.startsWith('/planning');
+        }
+      )
+ 
+
+    // singleSpa.registerApplication(
+    //     'sidebar-mf',
+    //     function () {
+    //       return System.import('sidebar-mf');
+    //     },
+    //     function (location) {
+    //       return location.pathname.startsWith('/');
+    //     }
+    //   )
+      singleSpa.start();
+    })   
+
+
+
+
+            // System.import('config')
+
+  </script>
+  <import-map-overrides-full></import-map-overrides-full>
+ 
+
+  
+  <header id="navbar-mf"></header>  
+  <main role="main">
+    <div id="app1"></div>
+    <div id="app2"></div>
+    <div id="planning"></div>
+    <div id="ressource"></div>
+
+  </main> 
+  <footer id="footer-mf"></footer>
+</body>
+
+</html>

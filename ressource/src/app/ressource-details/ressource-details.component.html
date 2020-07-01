@@ -1,0 +1,69 @@
+<div class="card">
+      <div class="card-header">
+        <h2>Ressource Details</h2> 
+  </div>
+<div class="card-body">
+<div *ngIf="ressource">
+  <div>
+    <label><b>First Name: </b></label> {{ressource.firstName}}
+  </div>
+  <div>
+    <label><b>Last Name: </b></label> {{ressource.lastName}}
+  </div>
+  <div>
+    <label><b>Email : </b></label> {{ressource.email}}
+  </div> 
+  <div *ngIf="ressource.role">
+    <label><b>Role : </b></label> {{ressource.role.roleLabel}}
+  </div>   
+   <div *ngIf="!ressource.role">
+     <form (ngSubmit)="ADDrole()">
+             <section class="example-section">
+          <label class="example-margin">Role:</label>
+          <select class="form-control" id="role.roleLabel" [(ngModel)]="role.roleLabel" name="role.roleLabel">
+                <option *ngFor="let role of roles" value={{role.roleLabel}} > {{role.roleLabel}}</option>
+            </select>
+        </section>
+        <button  type="submit" class="btn btn-success" type="sumbit" >ADD role</button>
+</form>
+  </div>
+ <div *ngIf="ressource.team">
+<label><b>Team :</b> {{ressource.team.teamName}}</label>
+ </div>
+ 
+ <div *ngIf="!ressource.team">
+<form (ngSubmit)="ADDteam()">
+<section class="example-section">
+          <label class="example-margin">Team:</label>
+          <select class="form-control" id="team.teamName" [(ngModel)]="team.teamName" name="team.teamName">
+            <option *ngFor="let team of teams" value={{team.teamName}} > {{team.teamName}}</option>
+             </select>
+        </section>
+        <button  type="submit" class="btn btn-success" type="sumbit" >ADD Team</button>
+</form>
+</div>
+<div *ngIf="ressource.skills">
+  <div>
+  <label><b>Skills :</b > <div *ngFor="let skilll of ressource.skills " >{{skilll.skillName}}</div></label>
+  </div>
+</div>
+<div > 
+  <form (ngSubmit)="ADDskills()">
+    <section class="example-section">
+              <label class="example-margin">Add a new skill:</label>
+              <select class="form-control" id="skillName" [(ngModel)]="skillName" name="skillName">
+                <option *ngFor="let skill of skills " value={{skill.skillName}} > {{skill.skillName}}</option>
+                 </select>
+            </section>
+            <button  type="submit" class="btn btn-success" type="sumbit" >ADD Skills</button>
+    </form>
+</div>
+<button (click)="gotoList()"class="btn btn-gradient-primary mb-2">Back to Ressource List</button>
+</div>
+</div>
+<!--
+  <form> 
+      <input type="hidden" class="form-control" id="lasttName" required [(ngModel)]="ressource.lastName" name="lastName">
+      <input type="hidden" class="form-control" id="firstName" required [(ngModel)]="ressource.firstName" name="firstName">
+      <input type="text" required [(ngModel)]="ressource.role.roleLabel" name="roleLabel" placeholder="Role"><button type="submit" class="btn btn-success" value="Register" (click)="registerNow()">ADD Role</button> </form>
+-->

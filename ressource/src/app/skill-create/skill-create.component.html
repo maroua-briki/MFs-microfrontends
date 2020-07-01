@@ -1,0 +1,37 @@
+
+<!--<h3>Create Ressource</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+<div style="width: 400px;">
+  <form >
+    <div class="form-group">
+      <label for="skillName">Skill Name</label>
+      <input type="text" class="form-control" id="skillName" required [(ngModel)]="skill.skillName" name="skillName">
+    </div>
+    
+    <button type="submit" class="btn btn-success" name="submit_reg" value="Register" (click)="registerNow()">Submit</button>
+  </form>
+</div>
+</div>
+</div>
+</div>
+-->
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Add new skill</h4>
+    <p class="card-description">
+            
+    </p>
+      <form >
+        <div class="form-group">
+          <input  class="form-control form-control-lg" type="text"id="skillName" required [(ngModel)]="skill.skillName" name="skillName" placeholder="Skill name">
+        </div>
+        
+        <div class="mt-3">
+          <button class="btn btn-gradient-primary mb-2" type="sumbit" value="Register" (click)="registerNow()" >ADD</button>
+          <button class="btn btn-gradient-back mb-2" type="sumbit"  (click)="gotoList()" >BACK</button> 
+        </div>
+        </form>
+        </div>
+    </div>

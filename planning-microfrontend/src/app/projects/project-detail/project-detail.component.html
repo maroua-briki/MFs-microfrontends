@@ -1,0 +1,29 @@
+
+<div class="row" class="col-8">
+  <div class="card">
+    <h5 class="card-header bg-info text-white">Project Details</h5>
+    <div class="card-body">
+      <h5 class="card-title">Project {{project.topic}}</h5>
+      <p class="card-text"> StartDate : {{project.startDate}}</p>
+      <p class="card-text"> End Date : {{project.endDate}} </p>
+      <button type="button" class="btn btn-gradient-dark btn-rounded btn-fw" routerLink="./create-event"
+        routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+      true}">add Event </button>
+      <button type="button" class="btn btn-gradient-dark btn-rounded btn-fw" routerLink="./add-phase"
+        routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+      true}">add Phase </button>
+      <button type="button" class="btn btn-gradient-dark btn-rounded btn-fw" routerLink="./phases"
+      routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+    true}">Phases </button>
+    <button type="button" class="btn btn-gradient-dark btn-rounded btn-fw" routerLink="./events"
+    routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+  true}">Events </button>
+    </div>
+  </div>
+  <br>
+  <router-outlet></router-outlet>
+
+  <!-- <h2>Sharing Data between Unrelated Component </h2>
+<button  (click)="sendMessage()" class="btn btn-primary">Send Message</button>
+<button style="margin:10px" (click)="clearMessage()" class="btn btn-secondary">Clear Message</button> -->
+

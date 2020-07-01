@@ -1,0 +1,69 @@
+<!--<h3>Update Ressource</h3>
+<div style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">First Name</label>
+      <input type="text" class="form-control" id="firstName" required [(ngModel)]="ressource.firstName" name="firstName">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Last Name</label>
+      <input type="text" class="form-control" id="lastName" required [(ngModel)]="ressource.lastName" name="lastName">
+    </div>
+    <div class="form-group">
+      <label for="name">Email</label>
+      <input type="text" class="form-control" id="email" required [(ngModel)]="ressource.email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="name">Profile</label>
+      <input type="text" class="form-control" id="profile" required [(ngModel)]="ressource.profile" name="profile">
+    </div>
+    <div class="form-group">
+      <label for="name">phoneNumber</label>
+      <input type="text" class="form-control" id="phoneNumber" required [(ngModel)]="ressource.phoneNumber" name="phoneNumber">
+    </div>
+    <div *ngIf="ressource.role" class="form-group">
+      <label for="name">Role</label>
+      <input type="text" class="form-control" id="role.roleLabel" required [(ngModel)]="ressource.role.roleLabel" name="roleLabel">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+-->
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Update ressource</h4>
+    <p class="card-description">
+            
+    </p>
+      <form (ngSubmit)="onSubmit()" >
+        <div class="form-group">
+          
+          <input  class="form-control form-control-lg" type="text"id="firstName" required [(ngModel)]="ressource.firstName" name="firstName">
+        </div>
+        <div class="form-group">
+          <input  class="form-control form-control-lg" type="text"id="lastName" required [(ngModel)]="ressource.lastName" name="lastName" >
+        </div>
+        <div class="form-group">
+          <input  class="form-control form-control-lg" type="text"id="email" required [(ngModel)]="ressource.email" name="email" >
+        </div>
+        <div class="form-group">
+          <input  class="form-control form-control-lg" type="text"id="profile" required [(ngModel)]="ressource.profile" name="profile" >
+        </div>
+        <div class="form-group">
+          <input  class="form-control form-control-lg" type="text"id="phoneNumber" required [(ngModel)]="ressource.phoneNumber" name="phoneNumber" >
+        </div>
+        <div class="form-group">
+          <input  class="form-control form-control-lg" type="text"id="role" required [(ngModel)]="ressource.role.roleLabel" name="ressource.role" >
+        </div>
+        <div class="form-group">
+          <input  class="form-control form-control-lg" type="text"id="team" required [(ngModel)]="ressource.team.teamName" name="ressource.team" >
+        </div>
+        <div class="mt-3">
+          <button class="btn btn-gradient-primary mb-2" type="sumbit"  >Update</button>
+          <button class="btn btn-gradient-back mb-2" type="sumbit"  (click)="gotoList()" >BACK</button> 
+        </div>
+        </form>
+        </div>
+    </div>
