@@ -1,6 +1,6 @@
 # microfrontends
 this repo contains all the microfrontends for : Project Management Tool
-<br/>these MFs are developped with SINGLE-SPA which is a framework for bringing together multiple JavaScript microfrontends in a frontend application
+<br/>these MFs are developped with <b>SINGLE-SPA<b> which is a framework for bringing together multiple JavaScript microfrontends in a frontend application
                            <br/>   Angular : version : 9.1.7
 
 To learn more about single SPA you can visit this rich documentation : 
