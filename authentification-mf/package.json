@@ -32,7 +32,7 @@
     "jquery": "^3.4.1",
     "ng-sidebar": "^9.3.0",
     "ng2-charts": "^2.3.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "rxjs": "~6.5.4",
     "single-spa": "^5.5.2",
     "single-spa-angular": "^4.2.0",
