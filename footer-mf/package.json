@@ -29,7 +29,7 @@
     "compass-mixins": "^0.12.10",
     "jquery": "^3.4.1",
     "ng2-charts": "^2.3.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "rxjs": "~6.5.4",
     "single-spa": ">=4.0.0",
     "single-spa-angular": "^4.2.0",
